@@ -24,6 +24,27 @@
 - Apply subtitles last, after all overlays and cards, so they remain visible.
 - Keep source audio intelligible; preserve approved music and effects only.
 
+## Licensed background music
+
+- Use Epidemic Sound only when the user requested music and the strategy named
+  the music direction or selected track before approval.
+- Check for live callable Epidemic Sound MCP tools. Do not infer access from a
+  subscription statement, an API-key page, or a saved configuration.
+- Search from editorial intent: mood, energy curve, BPM range, vocals, featured
+  instruments, duration, and where the hook or product payoff lands. Prefer
+  instrumental material for speech-heavy edits unless vocals were requested.
+- When automatic selection was delegated, rank candidates by brief fit,
+  dialogue compatibility, duration/adaptation fit, and edit structure. Choose
+  one and explain it in the strategy; do not download before approval.
+- Keep `EPIDEMIC_SOUND_API_KEY` or OAuth tokens outside the repository and all
+  media work directories. Never print, log, copy, or commit credentials.
+- Record title, artist, recording ID, downloaded format or stem, source service,
+  selection reason, and the user's stated publishing account/channel context.
+  This record is operational evidence, not a legal guarantee.
+- Mix for speech intelligibility. Use fades and dialogue-aware ducking when
+  needed, then measure integrated loudness and true peak on the rendered
+  preview. A track may not mask words, introduce clipping, or end abruptly.
+
 ## Preview, QA, and retry limit
 
 1. Render one complete 720p preview before any final export.

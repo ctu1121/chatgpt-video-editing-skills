@@ -85,6 +85,22 @@ filename, that it will be uploaded to ElevenLabs for ElevenLabs Scribe v2
 transcription, the intended use, and that quota or charges may apply. Do not
 upload unless the user confirms that exact action.
 
+## Epidemic Sound credentials
+
+Treat Epidemic Sound OAuth tokens and `EPIDEMIC_SOUND_API_KEY` as secrets under
+the same no-chat, no-log, no-command-argument, and no-commit rules. Prefer the
+active AI client's secure MCP connector or process environment. Never place
+them in `~/Developer/video-use/.env`, a Skill folder, a media directory, or a
+project repository unless official client documentation explicitly requires a
+different protected location and the user approves that exact change.
+
+Setup verifies only that the active client exposes the requested live tools,
+such as catalog search and track download. It does not perform a search,
+download audio, adapt a track, spend quota, publish, or change safelist state.
+If the tools are missing, report the connection as incomplete and direct the
+user to the official MCP setup flow. Do not ask the user to paste a key into
+the conversation.
+
 ## Evidence required for readiness
 
 Report observations, not assumptions:
@@ -96,6 +112,7 @@ Report observations, not assumptions:
 | video-use registration | agent Skills path and symlink target, if one was approved |
 | credential | source present and `.env` mode/ignore check, without value |
 | HyperFrames, if explicitly approved and installed | stable path, exact official origin URL, clean status, Node.js 22+, lockfile, installed Core Skills outcome |
+| Epidemic Sound, if requested | live MCP tool availability, authentication method category only, and missing capabilities without exposing credentials |
 | no-cost boundary | confirmation that no media was uploaded, transcribed, edited, previewed, or rendered |
 
 If a check fails, report it as incomplete with the next proposed mutation; do

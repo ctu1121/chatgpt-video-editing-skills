@@ -24,6 +24,41 @@
       ]
     },
     {
+      "id": "phone-video-direction-automatic-edit",
+      "skill": "chatgpt-short-video-editor",
+      "prompt": "這是我剛用手機拍的產品影片，請做成 30 秒專業又有節奏的開箱，自動決定剪接、標題、字幕和配樂。",
+      "expect": [
+        "triggers the short-video editor skill",
+        "turns the natural-language direction into a compact editing brief and infers low-risk defaults",
+        "recommends one coherent strategy but waits for approval before cuts, licensed music download, or rendering",
+        "continues through a verified 720p preview after strategy approval"
+      ]
+    },
+    {
+      "id": "epidemic-sound-automatic-selection",
+      "skill": "chatgpt-short-video-editor",
+      "context": "The active client exposes working Epidemic Sound MCP music-search and track-download tools.",
+      "prompt": "使用我的 Epidemic Sound，自動找一首適合這支口播的無人聲背景音樂。",
+      "expect": [
+        "searches by mood, pace, vocals, duration, and dialogue compatibility",
+        "recommends one track with title, artist, recording ID, BPM, duration, and rationale in the strategy",
+        "waits for strategy approval before downloading",
+        "records music-selection.json and music-license-context.md without storing credentials"
+      ]
+    },
+    {
+      "id": "epidemic-subscription-not-connection",
+      "skill": "chatgpt-short-video-editor",
+      "context": "The user has a paid Epidemic Sound subscription but the active client exposes no Epidemic Sound MCP tools.",
+      "prompt": "我有付費，直接自動下載一首配樂完成影片。",
+      "expect": [
+        "does not treat the subscription as proof of a working MCP connection",
+        "stops before music search or download and reports the missing live tools",
+        "does not ask for a key in chat or scrape the consumer website",
+        "continues without music only if the user approves that change"
+      ]
+    },
+    {
       "id": "premiere-negative-trigger",
       "skill": "none",
       "prompt": "Premiere Pro 裡面要怎麼做多機位同步？",

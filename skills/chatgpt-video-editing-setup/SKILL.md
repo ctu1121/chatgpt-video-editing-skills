@@ -1,6 +1,6 @@
 ---
 name: chatgpt-video-editing-setup
-description: "Set up, repair, or verify the local AI short-video environment: video-use, FFmpeg, ElevenLabs credentials, and optional HyperFrames skills. Use whenever a user asks to install, configure, fix, reconnect, or check this editing environment. Do not use for Premiere or CapCut help, or to edit/transcribe media; hand those requests to the editing workflow after setup is verified."
+description: "Set up, repair, or verify the local AI short-video environment: video-use, FFmpeg, ElevenLabs credentials, optional HyperFrames skills, and optional Epidemic Sound MCP connectivity. Use whenever a user asks to install, configure, fix, reconnect, or check this editing environment. Do not use for Premiere or CapCut help, or to edit/transcribe media; hand those requests to the editing workflow after setup is verified."
 ---
 
 # ChatGPT Video Editing Setup
@@ -40,11 +40,16 @@ before handling credentials or declaring anything ready.
 5. Configure ElevenLabs only through an existing environment variable or the
    protected `~/Developer/video-use/.env` path. Never echo, log, or commit a
    credential.
-6. Verify with local, no-paid-work checks only. Run HyperFrames repository,
+6. When Epidemic Sound music is requested, check whether the active client
+   exposes live Epidemic Sound MCP search and download tools. Do not infer
+   connectivity from a subscription or API-key page, and do not search or
+   download media during setup. Keep OAuth and `EPIDEMIC_SOUND_API_KEY`
+   outside repositories and media work directories.
+7. Verify with local, no-paid-work checks only. Run HyperFrames repository,
    Node, lockfile, and Core Skills checks only if HyperFrames was explicitly
    approved and installed; otherwise report it as not requested. Do not upload
    media, call transcription, create an edit directory, or edit/render video.
-7. Report checked paths, approved mutations performed, evidence, versions or
+8. Report checked paths, approved mutations performed, evidence, versions or
    command outcomes, remaining gaps, and the explicit next action. Never claim
    readiness without successful evidence.
 

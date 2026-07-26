@@ -1,12 +1,13 @@
 ---
 name: chatgpt-short-video-editor
-description: "Edit a user-supplied video into a vertical Reel, Short, TikTok, video diary short, or an approved eight-step AI short-video workflow. Use when the user provides or points to media and asks to transcribe, cut, subtitle, preview, or export a vertical short. Do not use for environment-only setup or generic Premiere Pro or CapCut help."
+description: "Turn a user-supplied or phone-shot video plus a natural-language direction brief into an approved vertical Reel, Short, TikTok, video diary, product video, or other short-form edit. Use when the user provides media and asks Codex to automatically analyze, transcribe, choose cuts, add subtitles, titles, approved effects, or optional Epidemic Sound music, then render and QA a preview or final. Do not use for environment-only setup or generic Premiere Pro or CapCut help."
 ---
 
 # ChatGPT Short-video Editor
 
-Create a safe, evidence-backed vertical short from user-provided media. This
-Skill starts only when a source file or clear source location is available.
+Create a safe, evidence-backed vertical short from user-provided media and a
+plain-language creative direction. This Skill starts only when a source file or
+clear source location is available.
 
 ## Boundary and prerequisites
 
@@ -22,6 +23,10 @@ Skill starts only when a source file or clear source location is available.
    and wait for explicit consent. Do not upload before that consent.
 4. Read [the eight-step workflow](references/eight-step-workflow.md), then
    [the production rules](references/production-rules.md), before editing.
+5. When the user requests licensed music or delegates music selection, also
+   read [the Epidemic Sound workflow](references/epidemic-sound.md). A paid
+   subscription alone is not proof that callable MCP tools or download rights
+   are available. Check the live connection without exposing credentials.
 
 ## Required sequence
 
@@ -32,9 +37,20 @@ strategy and wait for approval. Until approval, do not choose edit points or
 add B-roll, animations, music, effects, CTA, or a publishing schedule. Treat
 these as opt-in creative decisions, not defaults.
 
+Treat the user's direction as an editing brief. Infer reasonable defaults for
+platform, pace, title treatment, subtitle density, music mood, and target
+length from the material and request. Ask only when a missing answer would
+materially change the result. If the user explicitly says to choose
+automatically, recommend one coherent strategy and one best-fit music track
+instead of returning a menu, but still wait for the single strategy approval
+before cutting, downloading licensed audio, or rendering.
+
 Use word-level verbatim timestamps, cached per unchanged source. Never cut
 inside a word. Keep 30–200ms padding around cut edges, work per segment, and
 use output-timeline subtitle timing. Subtitles are the last visual operation.
+Keep speech intelligible when music is approved, record the selected track and
+account/licensing context, and never claim that a subscription automatically
+licenses every channel or publishing use.
 
 Render a complete 720p preview first. Inspect the rendered preview, not only
 the source; make no more than three evidence-based self-fix passes. After the
@@ -47,6 +63,10 @@ complete without the corresponding verified output.
 If the requested operation exceeds this workflow, explain the safe stopping
 point. For environment gaps, use `chatgpt-video-editing-setup`; it must obtain
 approval before mutations and does not begin creative work.
+
+If Epidemic Sound was requested but its MCP tools are unavailable, stop before
+music search or download and report the missing connection. Continue without
+music only after the user agrees to that change.
 
 Keep and report the artifacts defined in [the output contract](references/output-contract.md).
 Present only one formal final outwardly, with its evidence-backed QA report.

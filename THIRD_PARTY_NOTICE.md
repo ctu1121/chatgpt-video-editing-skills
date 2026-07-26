@@ -5,6 +5,7 @@
 - [video-use](https://github.com/browser-use/video-use) — [MIT License](https://github.com/browser-use/video-use/blob/main/LICENSE)
 - [HyperFrames](https://github.com/heygen-com/hyperframes) — [Apache License 2.0](https://github.com/heygen-com/hyperframes/blob/main/LICENSE)
 - [ElevenLabs API 文件](https://elevenlabs.io/docs/api-reference/introduction) 與 [服務條款](https://elevenlabs.io/terms-of-use)
+- [Epidemic Sound MCP 文件](https://developers.epidemicsound.com/docs/mcp/) 與其適用服務條款；音樂、音效、stems、下載與發布權利仍取決於使用者帳戶、方案及實際發布情境
 - [FFmpeg](https://ffmpeg.org/) — [FFmpeg Legal／License](https://ffmpeg.org/legal.html)
 - [Pillow](https://python-pillow.github.io/) — [Pillow License](https://github.com/python-pillow/Pillow/blob/main/LICENSE)
 
