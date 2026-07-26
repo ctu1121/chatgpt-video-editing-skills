@@ -24,6 +24,7 @@ require_file "skills/chatgpt-short-video-editor/SKILL.md"
 require_file "skills/chatgpt-short-video-editor/references/eight-step-workflow.md"
 require_file "skills/chatgpt-short-video-editor/references/production-rules.md"
 require_file "skills/chatgpt-short-video-editor/references/output-contract.md"
+require_file "skills/chatgpt-short-video-editor/references/epidemic-sound.md"
 require_file "examples/完整提示詞.md"
 require_file "assets/ChatGPT剪短影音的八大步驟.png"
 require_file "LICENSE"
@@ -83,6 +84,10 @@ require_phrase "FFmpeg"
 require_phrase "ffprobe"
 require_phrase "Pillow"
 require_phrase "HyperFrames"
+require_phrase "EPIDEMIC_SOUND_API_KEY"
+require_phrase "Epidemic Sound MCP"
+require_phrase "music-selection.json"
+require_phrase "music-license-context.md"
 require_phrase "素材檢查、逐字轉寫、內容整理、剪輯決策、逐段粗剪、轉色／圖卡／字幕、混音與完整預覽、QA 與正式定稿"
 require_phrase "30–200ms"
 require_phrase "30ms"
@@ -122,6 +127,9 @@ require_file_phrase "$SETUP_RUNBOOK" 'HyperFrames 未要求'
 require_file_phrase "$SETUP_RUNBOOK" 'if [ "$hyperframes_approved" = yes ] && [ "$hyperframes_installed" = yes ]; then'
 require_file_phrase "$FULL_PROMPT" 'HyperFrames 未要求'
 require_file_phrase "README.md" 'Node.js 22 或更新版本'
+require_file_phrase "README.md" '手機影片'
+require_file_phrase "skills/chatgpt-short-video-editor/SKILL.md" 'natural-language direction brief'
+require_file_phrase "skills/chatgpt-short-video-editor/references/epidemic-sound.md" 'https://www.epidemicsound.com/a/mcp-service/mcp'
 
 reject_file_phrase "$SETUP_RUNBOOK" '[ -d "$repo/.git" ]'
 reject_file_phrase "$FULL_PROMPT" '[ -d "$repo/.git" ]'

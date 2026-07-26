@@ -11,7 +11,7 @@
 | Skill | 用途 | 不會做的事 |
 | --- | --- | --- |
 | [`chatgpt-video-editing-setup`](skills/chatgpt-video-editing-setup/SKILL.md) | 檢查、安裝、修復或驗證 video-use、FFmpeg、ffprobe、ElevenLabs 憑證與選用的 HyperFrames 環境 | 不上傳素材、不轉寫、不剪輯、不輸出影片 |
-| [`chatgpt-short-video-editor`](skills/chatgpt-short-video-editor/SKILL.md) | 對使用者提供的影片執行逐字轉寫、剪輯策略、粗剪、字幕、預覽、QA 與正式輸出 | 不會靜默安裝工具，也不會在預覽核准前輸出正式定稿 |
+| [`chatgpt-short-video-editor`](skills/chatgpt-short-video-editor/SKILL.md) | 將手機影片與方向描述轉成剪輯 brief，自動分析、提出剪接／圖卡／Epidemic Sound 配樂策略，核准後完成字幕、預覽、QA 與正式輸出 | 不會靜默安裝工具，也不會在策略或預覽核准前執行下一階段 |
 
 ## 安裝
 
@@ -81,6 +81,7 @@ npx skills remove chatgpt-video-editing-setup chatgpt-short-video-editor
 - [video-use](https://github.com/browser-use/video-use) 完整 Repo；剪輯輔助程式位於其中，不能只保留一份 Skill 文件。
 - [ElevenLabs Scribe v2](https://elevenlabs.io/docs/capabilities/speech-to-text) 憑證與可用額度，供完整精度流程取得 word-level 時間碼。
 - [Pillow](https://python-pillow.github.io/) 用於簡單靜態資訊卡。
+- [Epidemic Sound MCP](https://developers.epidemicsound.com/docs/mcp/) 為選用；只有要求授權配樂時才需連接。訂閱不等於 MCP 已連線，OAuth 或 API Key 必須保存在客戶端安全設定，不能寫入 Repo。
 - [HyperFrames](https://github.com/heygen-com/hyperframes) 僅在已核准的策略需要 HTML、CSS 或 GSAP 動畫時才是選用需求；若選用，必須有 Node.js 22 或更新版本與 Bun。未選用時，不要求 Node.js、HyperFrames Repo、`bun.lock` 或其 Core Skills。
 
 缺少工具時，剪輯 Skill 會停在安全位置，說明缺口並交給 Setup Skill 檢查。它不會自行 Clone、更新、安裝套件或改動你的 Skills 目錄。
@@ -94,6 +95,10 @@ npx skills remove chatgpt-video-editing-setup chatgpt-short-video-editor
 環境通過後開始剪輯：
 
 > 請使用 `chatgpt-short-video-editor`，把 `/完整/路徑/原始影片.mov` 剪成 60–90 秒、9:16 的繁體中文 Reels。先完成素材檢查、逐字轉寫與內容整理，再用 4–8 句提出剪輯策略，等我確認後才開始剪。
+
+也可以直接用手機素材加一句方向：
+
+> 請把這段手機影片做成 30 秒、專業但有節奏的產品開箱。自動選擇 Hook、剪接點、大標題、字幕與 Epidemic Sound 無人聲配樂；先給我一個最佳策略，核准後一路做到完整預覽與 QA。
 
 若想一次提供完整規格，可直接複製 [`examples/完整提示詞.md`](examples/完整提示詞.md)。
 
@@ -157,6 +162,8 @@ edit/
 ### 想加動畫、B-roll、音樂或 CTA
 
 請在剪輯策略階段提出或核准。這些都是 opt-in 創意決策，不是預設自動加入。簡單靜態圖卡優先使用 Pillow；只有已核准的 HTML、CSS 或 GSAP 動畫才需要 HyperFrames。
+
+若使用 Epidemic Sound，Skill 會先確認目前真的有可呼叫的 MCP 搜尋與下載工具，再依影片方向搜尋並推薦一首最佳配樂。核准後才下載、混音並保存 recording ID、曲名、作者及使用情境；API Key 或 OAuth token 不會進入 Git 或影片工作目錄。
 
 ## 第三方、授權與聲明
 

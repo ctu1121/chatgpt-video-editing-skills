@@ -12,6 +12,9 @@ edit/
 ├── master.srt
 ├── clips/                         # retained per-segment work when produced
 ├── animations/slot_<id>/          # source and output when animation is used
+├── audio/music/                    # approved downloaded/adapted music
+├── music-selection.json            # selected-track metadata and rationale
+├── music-license-context.md        # account/channel context, not legal proof
 ├── qa/                             # boundary samples, decode and QA evidence
 ├── preview.mp4                     # complete 720p review render
 └── final.mp4                       # the single 1080×1920 formal final
@@ -23,8 +26,12 @@ machine-readable edit record; `corrected-transcript.md` retains the human-read
 correction without replacing the cached verbatim transcript.
 
 When used, retain each animation's editable source and rendered output under
-its slot. Keep QA evidence sufficient to review every cut boundary (±1.5s),
-first/last/mid samples, subtitle safety, and full decode results.
+its slot. When licensed music is used, retain the exact selected asset under
+`audio/music/`, record its Epidemic Sound recording ID and selection metadata,
+and note the user's stated account/channel context without storing tokens or
+claiming legal clearance. Keep QA evidence sufficient to review every cut
+boundary (±1.5s), first/last/mid samples, subtitle safety, mix, and full decode
+results.
 
 Preview QA precedes preview approval. Final-file QA happens only after
 `final.mp4` is rendered: retain its boundary/sample inspection and full-decode

@@ -28,14 +28,21 @@ timing as equal to Scribe.
 
 Build a readable packed transcript and identify the story, strongest moments,
 obvious slips, omissions, likely target length, and ambiguity that needs a
-visual check. This is analysis, not an approved cut list.
+visual check. Convert the user's natural-language direction into a compact
+brief containing audience, outcome, platform, pace, visual language, music
+intent, must-keep content, and constraints. Infer low-risk defaults and label
+them as assumptions. This is analysis, not an approved cut list.
 
 ## 4. 剪輯決策
 
 Give a 4–8 sentence strategy in plain language: audience outcome, narrative
 shape, selected material, pacing, estimated duration, visual direction, and
-subtitle approach. Wait for approval. Do not independently add B-roll,
-animation, music, effects, CTA, or a publishing schedule.
+subtitle approach. Include any proposed titles, effects, CTA, and music
+direction. When Epidemic Sound is requested and connected, search from the
+brief and recommend one best-fit track with title, artist, recording ID,
+duration, BPM, vocals state, and the reason it fits. Wait for approval. Do not
+independently add B-roll, animation, music, effects, CTA, or a publishing
+schedule.
 
 ## 5. 逐段粗剪
 
@@ -54,9 +61,14 @@ from the EDL on the output timeline and apply them last.
 
 ## 7. 混音與完整預覽
 
-Create one complete 720p preview, including the approved mix and visuals.
-Check the rendered output at every cut and across its full duration before
-showing it as ready for review.
+After approval, download only the selected Epidemic Sound asset. Prefer an
+instrumental or stem mix for speech-heavy material and adapt it to the video
+duration when the connected tools support that operation. Record the track
+metadata and account/licensing context; never store credentials. Create one
+complete 720p preview, including the approved mix and visuals. Check speech
+intelligibility, music entrance/exit, ducking, clipping, sync, and the rendered
+output at every cut and across its full duration before showing it as ready for
+review.
 
 ## 8. QA 與正式定稿
 

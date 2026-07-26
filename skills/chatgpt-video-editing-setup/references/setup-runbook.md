@@ -249,3 +249,24 @@ verify it.
 Then use the checks in [security and verification](security-and-verification.md).
 Do not pass media to any API, invoke transcription, create `edit/`, render, or
 claim readiness based only on planned commands.
+
+## 5. Optional Epidemic Sound MCP connection
+
+Only run this branch when the user requests licensed background music or asks
+to configure Epidemic Sound. Re-read the official documentation at
+`https://developers.epidemicsound.com/docs/mcp/` because the MCP service is
+beta and its tools or authentication may change.
+
+The documented remote endpoint is
+`https://www.epidemicsound.com/a/mcp-service/mcp`. Prefer a supported OAuth
+flow in the active AI client. API-key authentication uses
+`EPIDEMIC_SOUND_API_KEY`; keys must remain in secure connector settings or the
+process environment and must never enter Git, a Skill, a media directory,
+command arguments, chat, or logs.
+
+After the user completes the client-side authorization, verify that the active
+client exposes the required live tools. For automatic background music, the
+minimum capability is music search plus track download. Duration adaptation,
+stems, or sound effects require their corresponding tools. Do not call those
+tools during setup; report their availability only. A subscription, account
+page, or saved key is not sufficient evidence of a working connection.
